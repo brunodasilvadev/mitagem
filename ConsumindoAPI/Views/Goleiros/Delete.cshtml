@@ -1,0 +1,80 @@
+﻿@model ConsumindoAPI.Models.GoleiroViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GoleiroViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posicao_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posicao_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jogos_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jogos_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

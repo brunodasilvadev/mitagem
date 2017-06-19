@@ -1,0 +1,74 @@
+﻿@model ConsumindoAPI.Models.GoleiroViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GoleiroViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posicao_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posicao_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jogos_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jogos_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.atleta_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
