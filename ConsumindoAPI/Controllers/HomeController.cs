@@ -6,16 +6,9 @@ namespace ConsumindoAPI.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ConsultaApi _cs;
-
-        //public HomeController()
-        //{
-        //    _cs = new ConsultaApi();
-        //}
 
         public ActionResult Index()
         {   
-            //var retornoAtletas = await _cs.RetornaAtletas();
             return View();
         }
 

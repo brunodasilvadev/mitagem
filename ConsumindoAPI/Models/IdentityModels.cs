@@ -29,5 +29,7 @@ namespace ConsumindoAPI.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<ConsumindoAPI.Models.AtletaViewModel> AtletaViewModels { get; set; }
     }
 }

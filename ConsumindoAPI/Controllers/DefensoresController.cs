@@ -3,20 +3,19 @@ using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
 {
-    public class GoleirosController : Controller
+    public class DefensoresController : Controller
     {
-        private MitagemEstatistica _mitagemGoleiro;
+        private MitagemEstatistica _mitagemDefensores;
 
-        public GoleirosController()
+        public DefensoresController()
         {
-            _mitagemGoleiro = new MitagemEstatistica();
+            _mitagemDefensores = new MitagemEstatistica();
         }
-        
-        // GET: Goleiros
+
+        // GET: Defensores
         public ActionResult Index()
         {
-            //1-Goleiro
-            return View(_mitagemGoleiro.Mitos(1));
+            return View(_mitagemDefensores.Mitos(2, 3));
         }
 
         protected override void Dispose(bool disposing)

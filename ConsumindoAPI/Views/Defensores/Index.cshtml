@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ConsumindoAPI.Models.AtletaViewModel>
+
+@{
+    ViewBag.Title = "Defensores";
+}
+
+<h2>Defensores</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.apelido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.posicao_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jogos_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.media)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.apelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.posicao_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogos_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.media)
+            </td>
+        </tr>
+    }
+</table>

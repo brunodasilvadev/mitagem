@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ConsumindoAPI.Models.GoleiroViewModel>
+﻿@model IEnumerable<ConsumindoAPI.Models.AtletaViewModel>
 
 @{
     ViewBag.Title = "Goleiros";
@@ -6,26 +6,14 @@
 
 <h2>Goleiros</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.apelido)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.posicao_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status_id)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.jogos_num)
-        </th>
+        </th>  
         <th>
             @Html.DisplayNameFor(model => model.DD)
         </th>
@@ -41,21 +29,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.apelido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.posicao_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status_id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.jogos_num)
         </td>
-        <td>
+         <td>
             @Html.DisplayFor(modelItem => item.DD)
         </td>
         <td>
@@ -64,11 +43,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.media)
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.atleta_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.atleta_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.atleta_id })
-        </td>*@
     </tr>
 }
 
