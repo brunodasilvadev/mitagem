@@ -30,10 +30,10 @@ namespace ConsumindoAPI.Mitagem
                 else if (posicao == 1)
                     item.media = ((item.DD * 3) + (item.GS * -2)) / item.jogos_num;
                 //Defesa posicao 2-Lateral / 3-Zagueiro
-                else if (posicao == 2 || posicao == 3)
+                else if (posicao == 2 || posicao2 == 3)
                     item.media = ((item.RB * 1.7) + (item.PE * -0.3) + (item.FC * -0.5)) / item.jogos_num;
-                //Meia posicao 4 Meias
-                else if (posicao == 4)
+                //Meia posicao 4-Meias / 5-Atacantes
+                else if (posicao == 4 || posicao == 5)
                     item.media = ((item.RB * 1.7) + (item.PE * -0.3) + (item.FC * -0.5) + 
                         (item.FF * 0.7) + (item.FD * 1) + (item.FT * 3.5) + (item.I * -0.5)) / item.jogos_num;
             }

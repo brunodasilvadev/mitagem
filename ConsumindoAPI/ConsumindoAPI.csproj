@@ -197,12 +197,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AtacantesController.cs" />
     <Compile Include="Controllers\DefensoresController.cs" />
     <Compile Include="Controllers\GoleirosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeiasController.cs" />
     <Compile Include="Entities\Atleta.cs" />
+    <Compile Include="Entities\Clube.cs" />
     <Compile Include="Entities\Scout.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -279,6 +281,11 @@
     <Content Include="Views\Goleiros\Index.cshtml" />
     <Content Include="Views\Defensores\Index.cshtml" />
     <Content Include="Views\Meias\Index.cshtml" />
+    <Content Include="Views\Atacantes\Create.cshtml" />
+    <Content Include="Views\Atacantes\Delete.cshtml" />
+    <Content Include="Views\Atacantes\Details.cshtml" />
+    <Content Include="Views\Atacantes\Edit.cshtml" />
+    <Content Include="Views\Atacantes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

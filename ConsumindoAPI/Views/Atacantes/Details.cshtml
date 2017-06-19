@@ -1,0 +1,202 @@
+﻿@model ConsumindoAPI.Models.AtletaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AtletaViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posicao_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posicao_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jogos_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jogos_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.I)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.I)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.G)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.G)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.media)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.media)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.atleta_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
