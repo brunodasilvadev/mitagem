@@ -1,22 +1,23 @@
 ﻿using ConsumindoAPI.Entities;
-using ConsumindoAPI.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace ConsumindoAPI.Services
 {
-    public class ConsultaApi 
+    public class ConsultaApi
     {
-        public async Task<List<AtletaViewModel>> RetornaAtletas()
+        //public async Task<IEnumerable<Atleta>> RetornaAtletas()
+        //{
+        //    var httpClient = new HttpClient();
+        //    var json = await httpClient.GetStringAsync("https://api.cartolafc.globo.com/atletas/mercado");
+        //    var atletaLista = JsonConvert.DeserializeObject<List<Atleta>>(json);
+        //}
+
+        public Mercado RetornaMercado()
         {
-            var httpClient = new HttpClient();
-            var json = await httpClient.GetStringAsync("https://api.cartolafc.globo.com/atletas/mercado");
+            Mercado mercado = JsonConvert.DeserializeObject<Mercado>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\cartola.json"));
 
-            var atletaLista = JsonConvert.DeserializeObject<List<AtletaViewModel>>(json);
-
-            return atletaLista;
+            return mercado;
         }
     }
 }

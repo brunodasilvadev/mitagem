@@ -1,44 +1,57 @@
-﻿using ConsumindoAPI.Models;
+﻿using ConsumindoAPI.Entities;
 using ConsumindoAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConsumindoAPI.Mitagem
 {
     public class MitagemEstatistica
     {
         private readonly ConsultaApi _cs;
+        private readonly Clube _clube;
 
         public MitagemEstatistica()
         {
             _cs = new ConsultaApi();
+            _clube = new Clube();
         }
 
-        public async Task<List<AtletaViewModel>> Mitos(int posicao, int posicao2 = 0)
+        //public async Task<IEnumerable<Atleta>> Mitos(int posicao)
+        public IEnumerable<Atleta> Mitos(int posicao)
         {
-            var retornoGoleiro = await _cs.RetornaAtletas();
+            //var retornoGoleiro = await _cs.RetornaAtletas();
 
-            var atletas = retornoGoleiro.Where(g => g.posicao_id == posicao && g.status_id == 1).ToList();
+            var retornoAtletas = _cs.RetornaMercado();
+
+            var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && g.status_id == 7).AsEnumerable();
+
+            //Lista de Clubes
+
 
             foreach (var item in atletas)
             {
                 //Atleta que não jogou
                 if (item.jogos_num == 0)
-                    item.media = 0;
+                    item.media = 0.0;
+
                 //Goleiro posicao 1
                 else if (posicao == 1)
-                    item.media = ((item.DD * 3) + (item.GS * -2)) / item.jogos_num;
+                    item.media = (double)((item.scout.DD * 3) + (item.scout.GS * -2)) / item.jogos_num;
+
                 //Defesa posicao 2-Lateral / 3-Zagueiro
-                else if (posicao == 2 || posicao2 == 3)
-                    item.media = ((item.RB * 1.7) + (item.PE * -0.3) + (item.FC * -0.5)) / item.jogos_num;
+                else if (posicao == 2 || posicao == 3)
+                    item.media = (double)((item.scout.RB * 1.7) + (item.scout.PE * -0.3) + (item.scout.FC * -0.5)) / item.jogos_num;
+
                 //Meia posicao 4-Meias / 5-Atacantes
                 else if (posicao == 4 || posicao == 5)
-                    item.media = ((item.RB * 1.7) + (item.PE * -0.3) + (item.FC * -0.5) + 
-                        (item.FF * 0.7) + (item.FD * 1) + (item.FT * 3.5) + (item.I * -0.5)) / item.jogos_num;
-            }
+                    item.media = (double)((item.scout.RB * 1.7) + (item.scout.PE * -0.3) + (item.scout.FC * -0.5) +
+                        (item.scout.FF * 0.7) + (item.scout.FD * 1) + (item.scout.FT * 3.5) + (item.scout.I * -0.5)) / item.jogos_num;
 
-            return atletas;
+
+                
+            }
+            
+            return atletas.OrderByDescending(a => a.media);
         }
     }
 }

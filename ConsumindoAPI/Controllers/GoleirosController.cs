@@ -1,31 +1,22 @@
-﻿using ConsumindoAPI.Mitagem;
+﻿using ConsumindoAPI.Mapeamentos;
 using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
 {
     public class GoleirosController : Controller
     {
-        private MitagemEstatistica _mitagemGoleiro;
+        private MapeamentoMitos _mapeamento;
 
         public GoleirosController()
         {
-            _mitagemGoleiro = new MitagemEstatistica();
+            _mapeamento = new MapeamentoMitos();
         }
-        
+
         // GET: Goleiros
         public ActionResult Index()
         {
             //1-Goleiro
-            return View(_mitagemGoleiro.Mitos(1));
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                Dispose();
-            }
-            base.Dispose(disposing);
-        }
+            return View(_mapeamento.Mitos(1));
+        } 
     }
 }

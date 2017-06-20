@@ -8,6 +8,9 @@
         public int posicao_id { get; set; }
         public int status_id { get; set; }
         public int jogos_num { get; set; }
+        public double media { get; set; }
+        public int clube_id { get; set; }
+        public string nomeClube { get; set; }
         public Scout scout { get; set; }
     }
 }
