@@ -1,165 +1,93 @@
 ﻿@model IEnumerable<ConsumindoAPI.Models.AtletaViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Atacantes";
 }
 
-<h2>Index</h2>
+<h2>Atacantes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.apelido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.posicao_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status_id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.jogos_num)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FC)
+            @Html.DisplayNameFor(model => model.Scout.PE)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FF)
+            @Html.DisplayNameFor(model => model.Scout.RB)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FS)
+            @Html.DisplayNameFor(model => model.Scout.FC)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PE)
+            @Html.DisplayNameFor(model => model.Scout.FS)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RB)
+            @Html.DisplayNameFor(model => model.Scout.FT)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PP)
+            @Html.DisplayNameFor(model => model.Scout.FD)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.A)
+            @Html.DisplayNameFor(model => model.Scout.FF)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.I)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.G)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GS)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CV)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DP)
+            @Html.DisplayNameFor(model => model.Scout.I)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.media)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco_num)
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apelido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.posicao_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jogos_num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.A)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.I)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.G)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.media)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.atleta_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.atleta_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.atleta_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.apelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogos_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.PE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.RB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.FC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.FS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.FT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.FD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.FF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.I)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco_num)
+            </td>
+        </tr>
+    }
 
 </table>

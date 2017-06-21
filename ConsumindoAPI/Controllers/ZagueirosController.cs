@@ -3,11 +3,11 @@ using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
 {
-    public class MeiasController : Controller
+    public class ZagueirosController : Controller
     {
         MapeamentoMitos _mapeamento;
 
-        public MeiasController()
+        public ZagueirosController()
         {
             _mapeamento = new MapeamentoMitos();
         }
@@ -15,8 +15,8 @@ namespace ConsumindoAPI.Controllers
         // GET: Lateral
         public ActionResult Index()
         {
-            // 4 - : posicao_id de meias
-            return View(_mapeamento.Mitos(4));
+            //3 : posicao_id de zagueiros
+            return View(_mapeamento.Mitos(3));
         }
     }
 }

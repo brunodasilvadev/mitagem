@@ -1,38 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using ConsumindoAPI.Mapeamentos;
 using System.Web.Mvc;
-using ConsumindoAPI.Models;
-using ConsumindoAPI.Mitagem;
 
 namespace ConsumindoAPI.Controllers
 {
     public class AtacantesController : Controller
     {
-        private MitagemEstatistica _mitagemAtacantes;
+        MapeamentoMitos _mapeamento;
 
         public AtacantesController()
         {
-            _mitagemAtacantes = new MitagemEstatistica();
+            _mapeamento = new MapeamentoMitos();
         }
 
-        // GET: Atacantes
+        // GET: Lateral
         public ActionResult Index()
         {
-            return View(_mitagemAtacantes.Mitos(5));
-        }
-        
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                Dispose();
-            }
-            base.Dispose(disposing);
+            //5 : posicao_id de atacante
+            return View(_mapeamento.Mitos(5));
         }
     }
 }

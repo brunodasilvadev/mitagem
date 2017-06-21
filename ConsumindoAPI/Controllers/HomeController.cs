@@ -1,6 +1,4 @@
-﻿using ConsumindoAPI.Services;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
 {

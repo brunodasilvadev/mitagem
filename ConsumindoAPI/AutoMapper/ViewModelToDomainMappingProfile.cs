@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using ConsumindoAPI.Entities;
 using ConsumindoAPI.Models;
-using System.Collections.Generic;
 
 namespace ConsumindoAPI.AutoMapper
 {

@@ -15,7 +15,7 @@ namespace ConsumindoAPI.Controllers
         // GET: Goleiros
         public ActionResult Index()
         {
-            //1-Goleiro
+            //1: posicao_id de goleiro
             return View(_mapeamento.Mitos(1));
         } 
     }

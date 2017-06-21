@@ -11,6 +11,7 @@
         public double media { get; set; }
         public int clube_id { get; set; }
         public string nomeClube { get; set; }
+        public double preco_num { get; set; }
         public Scout scout { get; set; }
     }
 }

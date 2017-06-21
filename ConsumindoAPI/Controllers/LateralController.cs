@@ -15,6 +15,7 @@ namespace ConsumindoAPI.Controllers
         // GET: Lateral
         public ActionResult Index()
         {
+            //2 : : posicao_id de lateral
             return View(_mapeamento.Mitos(2));
         }
     }

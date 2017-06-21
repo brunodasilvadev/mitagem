@@ -15,28 +15,34 @@
             @Html.DisplayNameFor(model => model.jogos_num)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RB)
+            @Html.DisplayNameFor(model => model.Scout.PE)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PE)
+            @Html.DisplayNameFor(model => model.Scout.RB)
         </th>
          <th>
-            @Html.DisplayNameFor(model => model.FC)
+            @Html.DisplayNameFor(model => model.Scout.FC)
         </th> 
         <th>
-            @Html.DisplayNameFor(model => model.FF)
+            @Html.DisplayNameFor(model => model.Scout.FS)
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.Scout.FT)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FD)
+            @Html.DisplayNameFor(model => model.Scout.FD)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FT)
+            @Html.DisplayNameFor(model => model.Scout.FF)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.I)
+            @Html.DisplayNameFor(model => model.Scout.I)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.media)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco_num)
         </th>
         <th></th>
     </tr>
@@ -50,28 +56,35 @@
             @Html.DisplayFor(modelItem => item.jogos_num)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RB)
+            @Html.DisplayFor(modelItem => item.Scout.PE)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Scout.RB)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PE)
+            @Html.DisplayFor(modelItem => item.Scout.FC)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FC)
+            @Html.DisplayFor(modelItem => item.Scout.FS)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FF)
+            @Html.DisplayFor(modelItem => item.Scout.FT)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FD)
+            @Html.DisplayFor(modelItem => item.Scout.FD)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FT)
+            @Html.DisplayFor(modelItem => item.Scout.FF)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.I)
+            @Html.DisplayFor(modelItem => item.Scout.I)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.media)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preco_num)
         </td>
     </tr>
 }
