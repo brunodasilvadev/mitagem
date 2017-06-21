@@ -6,7 +6,7 @@ namespace ConsumindoAPI.Controllers
     {
 
         public ActionResult Index()
-        {   
+        {
             return View();
         }
 

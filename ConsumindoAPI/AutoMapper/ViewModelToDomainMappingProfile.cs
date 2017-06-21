@@ -11,6 +11,7 @@ namespace ConsumindoAPI.AutoMapper
             Mapper.CreateMap<AtletaViewModel, Atleta>();
             Mapper.CreateMap<AtletaViewModel, Scout>();
             Mapper.CreateMap<ScoutViewModel, Scout>();
+            Mapper.CreateMap<PartidaViewModel, Partida>();
 
         }
     }

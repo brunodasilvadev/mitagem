@@ -48,6 +48,14 @@
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -210,9 +218,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeiasController.cs" />
+    <Compile Include="Controllers\PartidasController.cs" />
     <Compile Include="Controllers\ZagueirosController.cs" />
     <Compile Include="Data\CartolaContext.cs" />
+    <Compile Include="Data\Repository\ClubeRepository.cs" />
     <Compile Include="Entities\Atleta.cs" />
+    <Compile Include="Entities\Partida.cs" />
+    <Compile Include="Entities\Rodada.cs" />
     <Compile Include="Entities\Mercado.cs" />
     <Compile Include="Entities\Clube.cs" />
     <Compile Include="Entities\Scout.cs" />
@@ -223,10 +235,13 @@
     <Compile Include="Mapeamentos\MapeamentoMitos.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Mitagem\MitagemEstatistica.cs" />
+    <Compile Include="Mitagem\RodadaAtual.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AtletaViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PartidaViewModel.cs" />
+    <Compile Include="Models\RodadasViewModel.cs" />
     <Compile Include="Models\ScoutViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConsultaApi.cs" />
@@ -247,6 +262,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Json\cartola.json" />
+    <Content Include="Json\rodada.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -297,10 +314,10 @@
     <Content Include="Views\Meias\Index.cshtml" />
     <Content Include="Views\Atacantes\Index.cshtml" />
     <Content Include="Views\Goleiros\Index.cshtml" />
+    <Content Include="Views\Partidas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

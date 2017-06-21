@@ -12,6 +12,9 @@
             @Html.DisplayNameFor(model => model.apelido)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.nome_clube)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.jogos_num)
         </th>
         <th>
@@ -29,6 +32,9 @@
         <th>
             @Html.DisplayNameFor(model => model.media)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco_num)
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -38,9 +44,11 @@
                 @Html.DisplayFor(modelItem => item.apelido)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.nome_clube)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.jogos_num)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Scout.RB)
             </td>
@@ -55,6 +63,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco_num)
             </td>
         </tr>
     }

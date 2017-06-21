@@ -12,6 +12,8 @@ namespace ConsumindoAPI.Models
         public string nome { get; set; }
         [DisplayName("Jogador")]
         public string apelido { get; set; }
+        [DisplayName("Clube")]
+        public string nome_clube { get; set; }
         public int posicao_id { get; set; }
         public int status_id { get; set; }
         [DisplayName("Jogos")]

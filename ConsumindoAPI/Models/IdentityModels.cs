@@ -28,5 +28,6 @@ namespace ConsumindoAPI.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }

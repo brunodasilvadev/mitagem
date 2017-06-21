@@ -1,14 +1,17 @@
 ﻿using ConsumindoAPI.Mapeamentos;
-using ConsumindoAPI.Services;
+using ConsumindoAPI.Models;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
 {
-    public class ZagueirosController : Controller
+    public class PartidasController : Controller
     {
         MapeamentoMitos _mapeamento;
 
-        public ZagueirosController()
+        public PartidasController()
         {
             _mapeamento = new MapeamentoMitos();
         }
@@ -17,7 +20,7 @@ namespace ConsumindoAPI.Controllers
         public ActionResult Index()
         {
             //3 : posicao_id de zagueiros
-            return View(_mapeamento.Mitos(3));
+            return View(_mapeamento.Partidas());
         }
     }
 }

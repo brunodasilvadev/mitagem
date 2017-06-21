@@ -1,5 +1,8 @@
-﻿using ConsumindoAPI.Entities;
+﻿using ConsumindoAPI.Data;
+using ConsumindoAPI.Data.Repository;
+using ConsumindoAPI.Entities;
 using ConsumindoAPI.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,18 +11,16 @@ namespace ConsumindoAPI.Mitagem
     public class MitagemEstatistica
     {
         private readonly ConsultaApi _cs;
-        private readonly Clube _clube;
+        private readonly ClubeRepository _clube;
 
         public MitagemEstatistica()
         {
             _cs = new ConsultaApi();
-            _clube = new Clube();
+            _clube = new ClubeRepository(new CartolaContext());
         }
 
         public IEnumerable<Atleta> Mitos(int posicao)
         {
-            //var retornoGoleiro = await _cs.RetornaAtletas();
-
             var retornoAtletas = _cs.RetornaMercado();
 
             var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && g.status_id == 7).AsEnumerable();
@@ -44,8 +45,10 @@ namespace ConsumindoAPI.Mitagem
                 else if (posicao == 4 || posicao == 5)
                     item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.7) + (item.scout.FC * -0.5) +
                         (item.scout.FT * 3.5) + (item.scout.FD * 1) + (item.scout.FF * 0.7) +  (item.scout.I * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
+
+                item.nomeClube = _clube.ObterNomeTimePorIdClube(item.clube_id);
             }
-            
+
             return atletas.OrderByDescending(a => a.media);
         }
     }
