@@ -51,5 +51,7 @@ namespace ConsumindoAPI.Mitagem
 
             return atletas.OrderByDescending(a => a.media);
         }
+
+
     }
 }

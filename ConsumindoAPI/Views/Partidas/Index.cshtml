@@ -1,51 +1,45 @@
 ﻿@model IEnumerable<ConsumindoAPI.Models.PartidaViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Partidas";
 }
 
-<h2>Index</h2>
+<h2>Partidas</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.clube_casa_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.clube_visitante_id)
+            @Html.DisplayNameFor(model => model.clube_casa)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.clube_casa_gols)
         </th>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.clube_visitante_gols)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.clube_visitante)
+        </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.clube_casa_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.clube_visitante_id)
+            @Html.DisplayFor(modelItem => item.clube_casa)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.clube_casa_gols)
         </td>
+        <th>X</th>
         <td>
             @Html.DisplayFor(modelItem => item.clube_visitante_gols)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PartidaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PartidaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PartidaId })
+            @Html.DisplayFor(modelItem => item.clube_visitante)
         </td>
+
     </tr>
 }
-
 </table>

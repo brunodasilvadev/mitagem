@@ -4,21 +4,26 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web;
 
 namespace ConsumindoAPI.Services
 {
     public class ConsultaApi
     {
-        //public async Task<IEnumerable<Atleta>> RetornaAtletas()
-        //{
-        //    var httpClient = new HttpClient();
-        //    var json = await httpClient.GetStringAsync("https://api.cartolafc.globo.com/atletas/mercado");
-        //    var atletaLista = JsonConvert.DeserializeObject<List<Atleta>>(json);
-        //}
+        public async Task<Rodada> RetornaRodadaAPI()
+        {
+            var httpClient = new HttpClient();
+            var json = await httpClient.GetStringAsync("https://api.cartolafc.globo.com/atletas/mercado");
+            var rodada = JsonConvert.DeserializeObject<Rodada>(json);
+
+            return rodada;
+        }
 
         public Mercado RetornaMercado()
         {
-            Mercado mercado = JsonConvert.DeserializeObject<Mercado>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\Json\cartola.json"));
+            Mercado mercado = JsonConvert.DeserializeObject<Mercado>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\ConsumindoAPI\Json\cartola.json"));
 
             return mercado;
         }
@@ -26,27 +31,30 @@ namespace ConsumindoAPI.Services
 
         public Rodada RetornaRodada()
         {
-            Rodada rodada = JsonConvert.DeserializeObject<Rodada>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\Json\rodada.json"));
+            Rodada rodada = JsonConvert.DeserializeObject<Rodada>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\ConsumindoAPI\Json\rodada.json"));
 
             return rodada;
         }
 
-        //public List<String> RetornaClassificacaoMandante()
-        //{
-        //    string url = "http://www.mat.ufmg.br/futebol/classificacao-como-mandante_seriea/";
+        public List<String> RetornaClassificacao(string _url)
+        {
+            //string url = "";
+            var Webget = new HtmlWeb();
+            
 
-        //    var Webget = new HtmlWeb();
+            var doc = Webget.Load(_url);
 
-        //    var doc = Webget.Load(url);
+            List<String> lstNode = new List<String>();
 
-        //    List<String> lstNode = new List<String>();
+            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//table//tbody//tr//td"))
+            {
+                var text = HttpUtility.HtmlDecode(node.InnerText.ToString().Trim());
+                lstNode.Add(text);
+            }
 
-        //    foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//table//tbody//tr//td"))
-        //    {
-        //        lstNode.Add(node.InnerText.ToString().Trim());
-        //    }
+            
 
-        //    return lstNode;
-        //}
+            return lstNode;
+        }
     }
 }

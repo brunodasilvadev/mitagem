@@ -13,7 +13,6 @@ namespace ConsumindoAPI.Controllers
             _mapeamento = new MapeamentoMitos();
         }
 
-        // GET: Lateral
         public ActionResult Index()
         {
             //3 : posicao_id de zagueiros

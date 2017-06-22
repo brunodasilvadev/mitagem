@@ -1,8 +1,4 @@
 ﻿using ConsumindoAPI.Mapeamentos;
-using ConsumindoAPI.Models;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 
 namespace ConsumindoAPI.Controllers
@@ -16,10 +12,8 @@ namespace ConsumindoAPI.Controllers
             _mapeamento = new MapeamentoMitos();
         }
 
-        // GET: Lateral
         public ActionResult Index()
-        {
-            //3 : posicao_id de zagueiros
+        {   
             return View(_mapeamento.Partidas());
         }
     }

@@ -12,7 +12,6 @@ namespace ConsumindoAPI.Controllers
             _mapeamento = new MapeamentoMitos();
         }
 
-        // GET: Lateral
         public ActionResult Index()
         {
             // 4 - : posicao_id de meias

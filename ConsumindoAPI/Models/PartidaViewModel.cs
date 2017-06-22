@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ConsumindoAPI.Models
 {
@@ -6,9 +7,15 @@ namespace ConsumindoAPI.Models
     {
         [Key]
         public int PartidaId { get; set; }
-        public int clube_casa_id { get; set; }
-        public int clube_visitante_id { get; set; }
+        [DisplayName("Mandante")]
+        public string clube_casa { get; set; }
+        [DisplayName("Visitante")]
+        public string clube_visitante { get; set; }
+        [DisplayName("Gols")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
         public double clube_casa_gols { get; set; }
+        [DisplayName("Gols")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
         public double clube_visitante_gols { get; set; }
     }
 }
