@@ -23,7 +23,9 @@ namespace ConsumindoAPI.Services
 
         public Mercado RetornaMercado()
         {
-            Mercado mercado = JsonConvert.DeserializeObject<Mercado>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\ConsumindoAPI\Json\cartola.json"));
+            String path = AppDomain.CurrentDomain.BaseDirectory.ToString();
+            path += "\\Json\\cartola.json";
+            Mercado mercado = JsonConvert.DeserializeObject<Mercado>(File.ReadAllText(path));
 
             return mercado;
         }
