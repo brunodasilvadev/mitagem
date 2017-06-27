@@ -40,10 +40,10 @@ namespace ConsumindoAPI.Services
 
         public List<String> RetornaClassificacao(string _url)
         {
-            //string url = "";
             var Webget = new HtmlWeb();
-            
 
+            //var teste = Webget.StatusCode;
+ 
             var doc = Webget.Load(_url);
 
             List<String> lstNode = new List<String>();
@@ -53,8 +53,6 @@ namespace ConsumindoAPI.Services
                 var text = HttpUtility.HtmlDecode(node.InnerText.ToString().Trim());
                 lstNode.Add(text);
             }
-
-            
 
             return lstNode;
         }
