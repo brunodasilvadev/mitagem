@@ -20,6 +20,8 @@ namespace ConsumindoAPI.Models
         public int jogos_num { get; set; }
         [DisplayName("Preço")]
         public double preco_num { get; set; }
+        [DisplayName("Status")]
+        public string Status { get; set; }
         //Média
         [DisplayName("Média")]
         [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
