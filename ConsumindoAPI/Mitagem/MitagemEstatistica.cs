@@ -23,7 +23,7 @@ namespace ConsumindoAPI.Mitagem
         {
             var retornoAtletas = _cs.RetornaMercado();
 
-            var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && g.status_id == 7).AsEnumerable();
+            var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
 
             //Lista de Clubes
             

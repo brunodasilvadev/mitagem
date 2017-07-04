@@ -33,7 +33,9 @@ namespace ConsumindoAPI.Services
 
         public Rodada RetornaRodada()
         {
-            Rodada rodada = JsonConvert.DeserializeObject<Rodada>(File.ReadAllText(@"C:\Projetos\ConsumindoAPI\ConsumindoAPI\Json\rodada.json"));
+            String path = AppDomain.CurrentDomain.BaseDirectory.ToString();
+            path += "\\Json\\rodada.json";
+            Rodada rodada = JsonConvert.DeserializeObject<Rodada>(File.ReadAllText(path));
 
             return rodada;
         }
