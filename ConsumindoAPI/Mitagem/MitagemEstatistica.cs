@@ -43,7 +43,7 @@ namespace ConsumindoAPI.Mitagem
 
                 //Meia posicao 4-Meias / 5-Atacantes
                 else if (posicao == 4 || posicao == 5)
-                    item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.7) + (item.scout.FC * -0.5) +
+                    item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.7) + (item.scout.FC * -0.5) + (item.scout.A * 5) +
                         (item.scout.FT * 3.5) + (item.scout.FD * 1) + (item.scout.FF * 0.7) +  (item.scout.I * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
 
                 item.nomeClube = _clube.ObterNomeTimePorIdClube(item.clube_id);
