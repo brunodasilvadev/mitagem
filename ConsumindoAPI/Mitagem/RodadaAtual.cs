@@ -41,24 +41,37 @@ namespace ConsumindoAPI.Mitagem
                 item.clube_casa = _clube.ObterNomeTimePorIdClube(item.clube_casa_id);
 
                 item.clube_visitante = _clube.ObterNomeTimePorIdClube(item.clube_visitante_id);
-                double _clube_casa_gols;
-                double _clube_visitante_gols;
+                double _clube_casa_gols = 0.0;
+                double _clube_casa_gols_2 = 0.0;
+                double _clube_visitante_gols = 0.0;
+                double _clube_visitante_gols_2 = 0.0;
 
                 foreach (var classificao in classificacaoMandante)
                 {
                     if (classificao.Contains(item.clube_casa.ToUpper()))
                     {
                         _clube_casa_gols = (double)Convert.ToInt32(classificacaoMandante[indice + 6]) / Convert.ToInt32(classificacaoMandante[indice + 2]);
-                        _clube_casa_gols = (_clube_casa_gols + (double)Convert.ToInt32(classificacaoVisitante[indice + 7]) / Convert.ToInt32(classificacaoVisitante[indice + 2])) / 2;
-
                         _clube_visitante_gols = (double)Convert.ToInt32(classificacaoMandante[indice + 7]) / Convert.ToInt32(classificacaoMandante[indice + 2]);
-                        _clube_visitante_gols = (_clube_visitante_gols + (double)Convert.ToInt32(classificacaoVisitante[indice + 6]) / Convert.ToInt32(classificacaoVisitante[indice + 2])) / 2;
-
-                        item.clube_casa_gols = _clube_casa_gols;
-                        item.clube_visitante_gols = _clube_visitante_gols;
                     }
                     indice++;
                 }
+
+                //
+                indice = 0;
+                foreach (var classificao in classificacaoVisitante)
+                {
+                    if (classificao.Contains(item.clube_visitante.ToUpper()))
+                    {
+                        _clube_casa_gols_2 = (double)Convert.ToInt32(classificacaoVisitante[indice + 7]) / Convert.ToInt32(classificacaoVisitante[indice + 2]);
+                        _clube_visitante_gols_2 = (double)Convert.ToInt32(classificacaoVisitante[indice + 6]) / Convert.ToInt32(classificacaoVisitante[indice + 2]);
+                    }
+                    indice++;
+                }
+
+
+                item.clube_casa_gols = (_clube_casa_gols + _clube_casa_gols_2) / 2;
+                item.clube_visitante_gols = (_clube_visitante_gols + _clube_visitante_gols_2) / 2;
+                //
             }
 
             return partidas;
