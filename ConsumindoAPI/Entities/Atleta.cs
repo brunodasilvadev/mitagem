@@ -9,6 +9,7 @@
         public int status_id { get; set; }
         public int jogos_num { get; set; }
         public double media { get; set; }
+        public double mediaGolsSofridos { get; set; }
         public int clube_id { get; set; }
         public string nomeClube { get; set; }
         public double preco_num { get; set; }

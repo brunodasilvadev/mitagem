@@ -26,9 +26,12 @@ namespace ConsumindoAPI.Models
         [DisplayName("Média")]
         [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
         public double media { get; set; }
-        [DisplayName("Média GS")]
+
+        //Média
+        [DisplayName("Média Gols Sofridos")]
         [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
-        public double mediaGS { get; set; }
+        public double mediaGolsSofridos { get; set; }
+
         public ScoutViewModel Scout { get; set; }
     }
 }

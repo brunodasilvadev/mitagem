@@ -26,7 +26,7 @@ namespace ConsumindoAPI.Mitagem
             var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
 
             //Lista de Clubes
-            
+
             foreach (var item in atletas)
             {
                 //Atleta que não jogou
@@ -37,7 +37,7 @@ namespace ConsumindoAPI.Mitagem
                 else if (posicao == 1)
                 {
                     item.media = (double)((item.scout.DD * 3) + (item.scout.GS * -2)) / item.jogos_num;
-                    item.mediaGS = (double)item.scout.GS / item.jogos_num;
+                    item.mediaGolsSofridos = (double)(item.scout.GS) / item.jogos_num;
                 }
                 //Defesa posicao 2-Lateral / 3-Zagueiro
                 else if (posicao == 2 || posicao == 3)
