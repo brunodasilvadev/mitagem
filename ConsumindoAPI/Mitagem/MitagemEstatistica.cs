@@ -38,6 +38,7 @@ namespace ConsumindoAPI.Mitagem
                 {
                     item.media = (double)((item.scout.DD * 3) + (item.scout.GS * -2)) / item.jogos_num;
                     item.mediaGolsSofridos = (double)(item.scout.GS) / item.jogos_num;
+                    item.mediaDefesasDificeis = (double)(item.scout.DD) / item.jogos_num;
                 }
                 //Defesa posicao 2-Lateral / 3-Zagueiro
                 else if (posicao == 2 || posicao == 3)
