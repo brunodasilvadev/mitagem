@@ -32,6 +32,9 @@ namespace ConsumindoAPI.Models
         [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
         public double mediaGolsSofridos { get; set; }
 
+        [DisplayName("Média Finalizações")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        public double finalizacoes { get; set; }
         public ScoutViewModel Scout { get; set; }
     }
 }
