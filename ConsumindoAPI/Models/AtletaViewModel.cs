@@ -38,6 +38,10 @@ namespace ConsumindoAPI.Models
         [DisplayName("Média DD")]
         [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
         public double mediaDefesasDificeis { get; set; }
+
+        [DisplayName("Pontos Média DD")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        public double pontuacaoMediaDD { get; set; }
         public ScoutViewModel Scout { get; set; }
     }
 }
