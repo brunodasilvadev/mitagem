@@ -7,62 +7,73 @@
 <h2>Goleiros</h2>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.apelido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_clube)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jogos_num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pontuacaoMediaDD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Scout.DD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mediaDefesasDificeis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.preco_num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.apelido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nome_clube)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jogos_num)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pontuacaoMediaDD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Scout.DD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mediaDefesasDificeis)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.preco_num)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status_id)
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.apelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nome_clube)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jogos_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pontuacaoMediaDD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scout.DD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mediaDefesasDificeis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preco_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apelido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome_clube)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jogos_num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pontuacaoMediaDD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scout.DD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mediaDefesasDificeis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.preco_num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status_id)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+@section scripts {
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
