@@ -18,22 +18,13 @@
             @Html.DisplayNameFor(model => model.jogos_num)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.pontuacaoMediaDD)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Scout.DD)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.mediaDefesasDificeis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pontuacaoMediaDD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Scout.GS)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.media)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mediaGolsSofridos)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.preco_num)
@@ -44,42 +35,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.apelido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_clube)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jogos_num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Scout.DD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mediaDefesasDificeis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pontuacaoMediaDD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Scout.GS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.media)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mediaGolsSofridos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.preco_num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status_id)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.apelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome_clube)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogos_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pontuacaoMediaDD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scout.DD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mediaDefesasDificeis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status_id)
+            </td>
+        </tr>
+    }
 
 </table>
