@@ -24,23 +24,23 @@ namespace ConsumindoAPI.Models
         public string Status { get; set; }
         //Média
         [DisplayName("Média")]
-        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double media { get; set; }
 
         //Média
         [DisplayName("Média Gols Sofridos")]
-        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double mediaGolsSofridos { get; set; }
 
         [DisplayName("Média Finalizações")]
-        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double finalizacoes { get; set; }
         [DisplayName("Média DD")]
-        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double mediaDefesasDificeis { get; set; }
 
         [DisplayName("Pontos Média DD")]
-        [DisplayFormat(DataFormatString = "{0:#,##0.0#}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double pontuacaoMediaDD { get; set; }
         public ScoutViewModel Scout { get; set; }
     }
