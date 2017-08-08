@@ -17,6 +17,7 @@
         public double finalizacoes { get; set; }
         public double mediaDefesasDificeis { get; set; }
         public double pontuacaoMediaDD { get; set; }
+        public double totalPontos { get; set; }
         public Scout scout { get; set; }
     }
 }

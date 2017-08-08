@@ -218,6 +218,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeiasController.cs" />
+    <Compile Include="Controllers\MelhoresController.cs" />
     <Compile Include="Controllers\PartidasController.cs" />
     <Compile Include="Controllers\ZagueirosController.cs" />
     <Compile Include="Data\CartolaContext.cs" />
@@ -252,6 +253,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Views\Zagueiros\Index.cshtml" />
+    <Content Include="Views\Melhores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ConsumindoAPI.Models.AtletaViewModel>
+
+@{
+    ViewBag.Title = "Melhores";
+}
+
+<h2>Melhores</h2>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.apelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nome_clube)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jogos_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalPontos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.media)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preco_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apelido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome_clube)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jogos_num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.totalPontos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.media)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.preco_num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status_id)
+                </td>
+            </tr>
+        }
+    <tbody>
+</table>
+@section scripts {
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+        $('#myTable').dataTable({
+            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]]
+        });
+    </script>
+}
