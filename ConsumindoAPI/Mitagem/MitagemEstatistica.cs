@@ -2,7 +2,6 @@
 using ConsumindoAPI.Data.Repository;
 using ConsumindoAPI.Entities;
 using ConsumindoAPI.Services;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -83,7 +82,5 @@ namespace ConsumindoAPI.Mitagem
 
             return atletas.OrderByDescending(a => a.media);
         }
-
-
     }
 }
