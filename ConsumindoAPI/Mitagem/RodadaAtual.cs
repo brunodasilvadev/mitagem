@@ -20,6 +20,7 @@ namespace ConsumindoAPI.Mitagem
         {
             _ca = new ConsultaApi();
             _clube = new ClubeRepository(new CartolaContext());
+            _consultaSite = new ConsultaSite();
         }
 
         public IEnumerable<Partida> Partidas()
