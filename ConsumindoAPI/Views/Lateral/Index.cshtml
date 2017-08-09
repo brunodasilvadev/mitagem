@@ -6,7 +6,7 @@
 
 <h2>Lateral</h2>
 
-<table class="table">
+<table id="myTable" class="table">
     <thead>
         <tr>
             <th>
@@ -39,7 +39,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Scout.FS)
             </th>
-
         </tr>
     </thead>
     <tbody>
@@ -86,6 +85,10 @@
     <script>
         $(document).ready(function () {
             $('#myTable').DataTable();
+        });
+
+        $('#myTable').dataTable({
+            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]]
         });
     </script>
 }
