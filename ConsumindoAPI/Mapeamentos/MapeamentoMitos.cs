@@ -26,5 +26,11 @@ namespace ConsumindoAPI.Mapeamentos
         {
             return Mapper.Map<IEnumerable<Partida>, IEnumerable<PartidaViewModel>>(_rodadaAtual.Partidas());
         }
+
+        public IEnumerable<AtletaViewModel> Todos()
+        {
+            return Mapper.Map<IEnumerable<Atleta>, IEnumerable<AtletaViewModel>>(_mitagemEstatisca.Todos());
+
+        }
     }
 }

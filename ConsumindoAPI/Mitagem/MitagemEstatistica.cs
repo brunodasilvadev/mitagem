@@ -19,13 +19,35 @@ namespace ConsumindoAPI.Mitagem
             _clube = new ClubeRepository(new CartolaContext());
         }
 
+        public IEnumerable<Atleta> Todos()
+        {
+            var retornoAtletas = _cs.RetornaMercado();
+
+            IEnumerable<Atleta> todosAtletas;
+
+           todosAtletas = retornoAtletas.Atletas.AsEnumerable();
+
+            foreach (var item in todosAtletas)
+            {
+                item.totalPontos = (double)(item.scout.A * 5 + item.scout.CA * -2 + item.scout.CV * -5 + item.scout.DD * 3 + item.scout.DP * 7 + item.scout.FC * -0.5 +
+                    item.scout.FD * 1 + item.scout.FF * 0.7 + item.scout.FS * 0.5 + item.scout.FT * 3.5 + item.scout.G * 8 + item.scout.GS * -2 + item.scout.I * -0.5 +
+                    item.scout.PE * -0.3 + item.scout.PP * -3.5 + item.scout.RB * 1.7 + item.scout.SG * 5);
+
+                if (item.jogos_num > 0)
+                    item.media = (double)(item.totalPontos / item.jogos_num);
+                else item.media = 0;
+
+                item.nomeClube = _clube.ObterNomeTimePorIdClube(item.clube_id);
+            }
+
+            return todosAtletas.OrderBy(a => a.totalPontos);
+        }
+
         public IEnumerable<Atleta> Mitos(int posicao)
         {
             var retornoAtletas = _cs.RetornaMercado();
 
             var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
-
-            //Lista de Clubes
 
             foreach (var item in atletas)
             {
