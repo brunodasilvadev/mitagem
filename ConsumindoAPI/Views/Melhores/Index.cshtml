@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.totalPontos)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.posicao_id)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.media)
             </th>
             <th>
@@ -49,6 +52,9 @@
                     @Html.DisplayFor(modelItem => item.totalPontos)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.posicao_id)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.media)
                 </td>
                 <td>
@@ -70,7 +76,8 @@
         });
 
         $('#myTable').dataTable({
-            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]]
+            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]],
+            "order": [[3, "desc"]]
         });
     </script>
 }

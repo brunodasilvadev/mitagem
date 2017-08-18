@@ -10,18 +10,26 @@ namespace ConsumindoAPI.Models
         public int atleta_id { get; set; }
 
         public string nome { get; set; }
+
         [DisplayName("Jogador")]
         public string apelido { get; set; }
+
         [DisplayName("Clube")]
         public string nome_clube { get; set; }
+
         public int posicao_id { get; set; }
+
         public int status_id { get; set; }
+
         [DisplayName("Jogos")]
         public int jogos_num { get; set; }
+
         [DisplayName("Preço")]
         public double preco_num { get; set; }
+
         [DisplayName("Status")]
         public string Status { get; set; }
+
         //Média
         [DisplayName("Média")]
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
@@ -35,6 +43,7 @@ namespace ConsumindoAPI.Models
         [DisplayName("Média Finalizações")]
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double finalizacoes { get; set; }
+
         [DisplayName("Média DD")]
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double mediaDefesasDificeis { get; set; }
@@ -42,6 +51,7 @@ namespace ConsumindoAPI.Models
         [DisplayName("Pontos Média DD")]
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double pontuacaoMediaDD { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         [DisplayName("Total Pontos")]
         public double totalPontos { get; set; }

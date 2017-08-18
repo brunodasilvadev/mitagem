@@ -14,11 +14,13 @@ namespace ConsumindoAPI.Mitagem
     {
         private readonly ConsultaApi _ca;
         private readonly ClubeRepository _clube;
+        private readonly ConsultaSite _consultaSite;
 
         public RodadaAtual()
         {
             _ca = new ConsultaApi();
             _clube = new ClubeRepository(new CartolaContext());
+            _consultaSite = new ConsultaSite();
         }
 
         public IEnumerable<Partida> Partidas()
@@ -27,11 +29,11 @@ namespace ConsumindoAPI.Mitagem
 
             var partidas = retornoRodada.partidas.AsEnumerable();
 
-            var classificacaoMandante = _ca.RetornaClassificacao("http://www.mat.ufmg.br/futebol/classificacao-como-mandante_seriea/");
+            var classificacaoMandante = _consultaSite.RetornaClassificacao("http://www.mat.ufmg.br/futebol/classificacao-como-mandante_seriea/");
 
             Thread.Sleep(15000);
 
-            var classificacaoVisitante = _ca.RetornaClassificacao("http://www.mat.ufmg.br/futebol/classificacao-como-visitante_seriea/");
+            var classificacaoVisitante = _consultaSite.RetornaClassificacao("http://www.mat.ufmg.br/futebol/classificacao-como-visitante_seriea/");
 
             int indice = 0;
 
