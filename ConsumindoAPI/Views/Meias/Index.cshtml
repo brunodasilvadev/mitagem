@@ -118,5 +118,9 @@
         $(document).ready(function () {
             $('#myTable').DataTable();
         });
+
+        $('#myTable').dataTable({
+            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]]
+        });
     </script>
 }
