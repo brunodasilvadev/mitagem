@@ -72,6 +72,8 @@ namespace ConsumindoAPI.Mitagem
                     item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.7) + (item.scout.FC * -0.5) + (item.scout.A * 5) +
                         (item.scout.FT * 3.5) + (item.scout.FD * 1) + (item.scout.FF * 0.7) + (item.scout.I * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
 
+                    item.mediaRB = (double)((item.scout.RB)) / (item.jogos_num);
+                    item.mediaPE = (double)((item.scout.PE)) / (item.jogos_num);
                     item.finalizacoes = (double)(item.scout.FT + item.scout.FD + item.scout.FF + item.scout.G) / item.jogos_num;
                 }
                 item.nomeClube = _clube.ObterNomeTimePorIdClube(item.clube_id);

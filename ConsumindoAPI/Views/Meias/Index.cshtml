@@ -31,7 +31,12 @@
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.mediaPE)
+            </th><th>
                 @Html.DisplayNameFor(model => model.Scout.PE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mediaRB)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scout.RB)
@@ -83,7 +88,14 @@
                     @Html.DisplayFor(modelItem => item.status_id)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.mediaPE)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Scout.PE)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.mediaRB)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Scout.RB)
@@ -112,7 +124,7 @@
 
 </table>
 @section scripts {
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
     <script>
         $(document).ready(function () {

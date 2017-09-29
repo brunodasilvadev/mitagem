@@ -18,6 +18,8 @@
         public double mediaDefesasDificeis { get; set; }
         public double pontuacaoMediaDD { get; set; }
         public double totalPontos { get; set; }
+        public double mediaRB { get; set; }
+        public double mediaPE { get; set; }
         public Scout scout { get; set; }
     }
 }

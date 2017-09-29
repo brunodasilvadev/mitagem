@@ -52,6 +52,14 @@ namespace ConsumindoAPI.Models
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         public double pontuacaoMediaDD { get; set; }
 
+        [DisplayName("Pontos Média RB")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
+        public double mediaRB { get; set; }
+
+        [DisplayName("Pontos Média PE")]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
+        public double mediaPE { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
         [DisplayName("Total Pontos")]
         public double totalPontos { get; set; }
