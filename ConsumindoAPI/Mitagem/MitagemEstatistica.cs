@@ -24,7 +24,7 @@ namespace ConsumindoAPI.Mitagem
 
             IEnumerable<Atleta> todosAtletas;
 
-           todosAtletas = retornoAtletas.Atletas.AsEnumerable();
+            todosAtletas = retornoAtletas.Atletas.AsEnumerable();
 
             foreach (var item in todosAtletas)
             {
@@ -47,6 +47,7 @@ namespace ConsumindoAPI.Mitagem
             var retornoAtletas = _cs.RetornaMercado();
 
             var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
+            //var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao).AsEnumerable();
 
             foreach (var item in atletas)
             {
@@ -61,11 +62,20 @@ namespace ConsumindoAPI.Mitagem
                     item.mediaGolsSofridos = (double)(item.scout.GS) / item.jogos_num;
                     item.mediaDefesasDificeis = (double)(item.scout.DD) / item.jogos_num;
                     item.pontuacaoMediaDD = item.mediaDefesasDificeis * 3;
+                    if (item.scout.SG > 0)
+                        item.intervaloMedioSemSofrerGol = (double)item.jogos_num / item.scout.SG;
+                    else
+                        item.intervaloMedioSemSofrerGol = -1;
                 }
                 //Defesa posicao 2-Lateral / 3-Zagueiro
                 else if (posicao == 2 || posicao == 3)
+                {
                     item.media = (double)((item.scout.RB * 1.7) + (item.scout.PE * -0.3) + (item.scout.FC * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
-
+                    if (item.scout.SG > 0)
+                        item.intervaloMedioSemSofrerGol = (double)item.jogos_num / item.scout.SG;
+                    else
+                        item.intervaloMedioSemSofrerGol = 0;
+                }
                 //Meia posicao 4-Meias / 5-Atacantes
                 else if (posicao == 4 || posicao == 5)
                 {

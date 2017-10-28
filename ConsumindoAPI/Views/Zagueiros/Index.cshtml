@@ -22,10 +22,7 @@
                 @Html.DisplayNameFor(model => model.media)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.preco_num)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
+                @Html.DisplayNameFor(model => model.intervaloMedioSemSofrerGol)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scout.RB)
@@ -38,6 +35,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scout.FS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preco_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
             </th>
         </tr>
     </thead>
@@ -57,12 +60,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.media)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.preco_num)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.status_id)
-                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.intervaloMedioSemSofrerGol)
+                </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Scout.RB)
                 </td>
@@ -74,6 +74,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Scout.FS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.preco_num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status_id)
                 </td>
             </tr>
         }

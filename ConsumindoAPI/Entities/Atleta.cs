@@ -16,6 +16,7 @@
         public double mediaGS { get; set; }
         public double finalizacoes { get; set; }
         public double mediaDefesasDificeis { get; set; }
+        public double intervaloMedioSemSofrerGol { get; set; }
         public double pontuacaoMediaDD { get; set; }
         public double totalPontos { get; set; }
         public double mediaRB { get; set; }
