@@ -66,6 +66,7 @@ namespace ConsumindoAPI.Mitagem
                         item.intervaloMedioSemSofrerGol = (double)item.jogos_num / item.scout.SG;
                     else
                         item.intervaloMedioSemSofrerGol = -1;
+                    //item.golsFeitos = item.scout.G;
                 }
                 //Defesa posicao 2-Lateral / 3-Zagueiro
                 else if (posicao == 2 || posicao == 3)
@@ -75,6 +76,9 @@ namespace ConsumindoAPI.Mitagem
                         item.intervaloMedioSemSofrerGol = (double)item.jogos_num / item.scout.SG;
                     else
                         item.intervaloMedioSemSofrerGol = 0;
+                    //item.golsFeitos = item.scout.G;
+                    item.mediaRB = (double)((item.scout.RB)) / (item.jogos_num);
+                    item.mediaPE = (double)((item.scout.PE)) / (item.jogos_num);
                 }
                 //Meia posicao 4-Meias / 5-Atacantes
                 else if (posicao == 4 || posicao == 5)
@@ -85,8 +89,10 @@ namespace ConsumindoAPI.Mitagem
                     item.mediaRB = (double)((item.scout.RB)) / (item.jogos_num);
                     item.mediaPE = (double)((item.scout.PE)) / (item.jogos_num);
                     item.finalizacoes = (double)(item.scout.FT + item.scout.FD + item.scout.FF + item.scout.G) / item.jogos_num;
+                   // item.golsFeitos = item.scout.G;
                 }
                 item.nomeClube = _clube.ObterNomeTimePorIdClube(item.clube_id);
+                item.golsFeitos = (double)(item.scout.G) / (item.jogos_num);
             }
 
             if (posicao == 1)

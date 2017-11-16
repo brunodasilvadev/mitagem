@@ -68,6 +68,9 @@ namespace ConsumindoAPI.Models
         [DisplayName("Total Pontos")]
         public double totalPontos { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:#,##0.00}", ApplyFormatInEditMode = true)]
+        [DisplayName("Média Gols")]
+        public double golsFeitos { get; set; }
         public ScoutViewModel Scout { get; set; }
     }
 }

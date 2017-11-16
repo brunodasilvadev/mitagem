@@ -21,6 +21,7 @@
         public double totalPontos { get; set; }
         public double mediaRB { get; set; }
         public double mediaPE { get; set; }
+        public double golsFeitos { get; set; }
         public Scout scout { get; set; }
     }
 }
