@@ -4,7 +4,7 @@ using ConsumindoAPI.Entities;
 using ConsumindoAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
-
+d
 namespace ConsumindoAPI.Mitagem
 {
     public class MitagemEstatistica
