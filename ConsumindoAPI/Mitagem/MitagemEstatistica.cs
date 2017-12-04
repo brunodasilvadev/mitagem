@@ -4,7 +4,7 @@ using ConsumindoAPI.Entities;
 using ConsumindoAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
-d
+
 namespace ConsumindoAPI.Mitagem
 {
     public class MitagemEstatistica
@@ -46,8 +46,8 @@ namespace ConsumindoAPI.Mitagem
         {
             var retornoAtletas = _cs.RetornaMercado();
 
-            var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
-            //var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao).AsEnumerable();
+            //var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao && (g.status_id == 7 || g.status_id == 2)).AsEnumerable();
+            var atletas = retornoAtletas.Atletas.Where(g => g.posicao_id == posicao).AsEnumerable();
 
             foreach (var item in atletas)
             {
