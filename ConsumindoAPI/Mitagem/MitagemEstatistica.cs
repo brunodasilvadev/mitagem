@@ -29,8 +29,8 @@ namespace ConsumindoAPI.Mitagem
             foreach (var item in todosAtletas)
             {
                 item.totalPontos = (double)(item.scout.A * 5 + item.scout.CA * -2 + item.scout.CV * -5 + item.scout.DD * 3 + item.scout.DP * 7 + item.scout.FC * -0.5 +
-                    item.scout.FD * 1 + item.scout.FF * 0.7 + item.scout.FS * 0.5 + item.scout.FT * 3.5 + item.scout.G * 8 + item.scout.GS * -2 + item.scout.I * -0.5 +
-                    item.scout.PE * -0.3 + item.scout.PP * -3.5 + item.scout.RB * 1.7 + item.scout.SG * 5);
+                    item.scout.FD * 1.2 + item.scout.FF * 0.8 + item.scout.FS * 0.5 + item.scout.FT * 3 + item.scout.G * 8 + item.scout.GS * -2 + item.scout.I * -0.5 +
+                    item.scout.PE * -0.3 + item.scout.PP * -4 + item.scout.RB * 1.5 + item.scout.SG * 5);
 
                 if (item.jogos_num > 0)
                     item.media = (double)(item.totalPontos / item.jogos_num);
@@ -71,7 +71,7 @@ namespace ConsumindoAPI.Mitagem
                 //Defesa posicao 2-Lateral / 3-Zagueiro
                 else if (posicao == 2 || posicao == 3)
                 {
-                    item.media = (double)((item.scout.RB * 1.7) + (item.scout.PE * -0.3) + (item.scout.FC * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
+                    item.media = (double)((item.scout.RB * 1.5) + (item.scout.PE * -0.3) + (item.scout.FC * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
                     if (item.scout.SG > 0)
                         item.intervaloMedioSemSofrerGol = (double)item.jogos_num / item.scout.SG;
                     else
@@ -83,8 +83,8 @@ namespace ConsumindoAPI.Mitagem
                 //Meia posicao 4-Meias / 5-Atacantes
                 else if (posicao == 4 || posicao == 5)
                 {
-                    item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.7) + (item.scout.FC * -0.5) + (item.scout.A * 5) +
-                        (item.scout.FT * 3.5) + (item.scout.FD * 1) + (item.scout.FF * 0.7) + (item.scout.I * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
+                    item.media = (double)((item.scout.PE * -0.3) + (item.scout.RB * 1.5) + (item.scout.FC * -0.5) + (item.scout.A * 5) +
+                        (item.scout.FT * 3) + (item.scout.FD * 1.2) + (item.scout.FF * 0.8) + (item.scout.I * -0.5) + (item.scout.FS * 0.5)) / item.jogos_num;
 
                     item.mediaRB = (double)((item.scout.RB)) / (item.jogos_num);
                     item.mediaPE = (double)((item.scout.PE)) / (item.jogos_num);
